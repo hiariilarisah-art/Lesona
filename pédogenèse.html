@@ -1,0 +1,684 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pédogenèse et Morphogenèse - Formation des sols et du relief</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c7873;
+            --secondary-color: #6fb3b8;
+            --accent-color: #ff9a3c;
+            --light-color: #f8f9fa;
+            --dark-color: #2d3436;
+            --text-color: #333;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f5f7fa;
+            background-image: linear-gradient(to bottom, #f5f7fa 0%, #e4edf5 100%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #004d47 100%);
+            color: white;
+            padding: 1.5rem 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .logo i {
+            font-size: 2.2rem;
+            color: var(--accent-color);
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .logo p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        /* Navigation */
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 8px 12px;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+        
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+        
+        /* Main content */
+        main {
+            padding: 2.5rem 0;
+            min-height: calc(100vh - 180px);
+        }
+        
+        .page-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+        
+        .page-title h2 {
+            color: var(--primary-color);
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .page-title p {
+            color: #666;
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Document sections */
+        .document-sections {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 3rem;
+        }
+        
+        .section-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.8rem;
+            transition: var(--transition);
+            border-left: 5px solid var(--secondary-color);
+        }
+        
+        .section-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+        
+        .section-card h3 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-card h3 i {
+            color: var(--accent-color);
+        }
+        
+        .section-card p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+        
+        .section-card ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .section-card li {
+            margin-bottom: 8px;
+        }
+        
+        .section-card .page-number {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        
+        /* Full document section */
+        .full-document {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 2.5rem;
+            margin-top: 2.5rem;
+        }
+        
+        .full-document h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .full-document h2 i {
+            color: var(--accent-color);
+        }
+        
+        .document-content {
+            max-height: 500px;
+            overflow-y: auto;
+            padding: 20px;
+            border: 1px solid #eaeaea;
+            border-radius: var(--border-radius);
+            background-color: #fdfdfd;
+        }
+        
+        .page-content {
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px dashed #ddd;
+        }
+        
+        .page-content:last-child {
+            border-bottom: none;
+        }
+        
+        .page-content h3 {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+        
+        .page-content p, .page-content li {
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+        
+        .page-content ul, .page-content ol {
+            padding-left: 25px;
+            margin-bottom: 15px;
+        }
+        
+        .highlight {
+            background-color: rgba(44, 120, 115, 0.1);
+            padding: 15px;
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--primary-color);
+            margin: 15px 0;
+        }
+        
+        .keyword {
+            background-color: rgba(255, 154, 60, 0.15);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #d35400;
+        }
+        
+        /* Download section */
+        .download-section {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(44, 120, 115, 0.05) 0%, rgba(111, 179, 184, 0.05) 100%);
+            border-radius: var(--border-radius);
+        }
+        
+        .download-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.2rem;
+            font-size: 1.6rem;
+        }
+        
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 14px 28px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            box-shadow: 0 4px 12px rgba(44, 120, 115, 0.3);
+        }
+        
+        .download-btn:hover {
+            background-color: #004d47;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(44, 120, 115, 0.4);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 25px;
+            margin: 15px 0;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .copyright {
+            margin-top: 15px;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 992px) {
+            .document-sections {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .document-sections {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            
+            .full-document {
+                padding: 1.5rem;
+            }
+            
+            .page-title h2 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .logo h1 {
+                font-size: 1.5rem;
+            }
+            
+            .page-title h2 {
+                font-size: 1.6rem;
+            }
+            
+            .section-card {
+                padding: 1.3rem;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-mountain"></i>
+                <div>
+                    <h1>Pédogenèse & Morphogenèse</h1>
+                    <p>Formation des sols et du relief</p>
+                </div>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="#sections"><i class="fas fa-list"></i> Sections</a></li>
+                    <li><a href="#document"><i class="fas fa-file-alt"></i> Document complet</a></li>
+                    <li><a href="#download"><i class="fas fa-download"></i> Télécharger</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main content -->
+    <main class="container">
+        <!-- Page title -->
+        <div class="page-title">
+            <h2>Pédogenèse et Morphogenèse</h2>
+            <p>Facteurs et processus de formation des sols et du relief - Géomorphologie et Pédologie</p>
+        </div>
+        
+        <!-- Document sections -->
+        <section id="sections">
+            <h2 style="color: var(--primary-color); margin-bottom: 1.5rem;"><i class="fas fa-layer-group"></i> Sections du document</h2>
+            <div class="document-sections">
+                <!-- Section 1 -->
+                <div class="section-card">
+                    <h3><i class="fas fa-globe-americas"></i> Définition des pays tropicaux</h3>
+                    <p>Les pays tropicaux correspondent aux pays situés dans la zone intertropicale, entre les deux tropiques.</p>
+                    <p><strong>Critère thermique :</strong> température moyenne mensuelle > 15°C, absence de gelées saisonnières.</p>
+                    <p><strong>Détermination des saisons :</strong> alternance de périodes pluvieuses et sèches.</p>
+                    <span class="page-number">Page 3</span>
+                </div>
+                
+                <!-- Section 2 -->
+                <div class="section-card">
+                    <h3><i class="fas fa-cloud-sun-rain"></i> Conditions climatiques</h3>
+                    <p>Particularités climatiques du milieu tropical et leur importance géomorphologique.</p>
+                    <ul>
+                        <li>Régularité des températures</li>
+                        <li>Importance de l'érosion pluviale</li>
+                        <li>Régime hydrique et zones de convergence</li>
+                    </ul>
+                    <span class="page-number">Page 4</span>
+                </div>
+                
+                <!-- Section 3 -->
+                <div class="section-card">
+                    <h3><i class="fas fa-mountain"></i> Désagrégation mécanique</h3>
+                    <p>Processus de formation du sol par fragmentation des roches et incorporation de matière organique.</p>
+                    <p><strong>Thermoclastie :</strong> fragmentation due aux changements de température (dilatation/contraction).</p>
+                    <p><strong>Cryoclastie :</strong> fragmentation due au gel/dégel de l'eau dans les roches.</p>
+                    <span class="page-number">Pages 5-6</span>
+                </div>
+                
+                <!-- Section 4 -->
+                <div class="section-card">
+                    <h3><i class="fas fa-vial"></i> Altération chimique</h3>
+                    <p>Actions chimiques de la météorisation : dissolution, oxydation, carbonatation.</p>
+                    <ul>
+                        <li>Dissolution des minéraux par l'eau</li>
+                        <li>Oxydation du fer et du soufre</li>
+                        <li>Hydratation et hydrolyse</li>
+                    </ul>
+                    <span class="page-number">Pages 6-8</span>
+                </div>
+                
+                <!-- Section 5 -->
+                <div class="section-card">
+                    <h3><i class="fas fa-bug"></i> Rôle des organismes vivants</h3>
+                    <p>Intervention des organismes vivants dans l'attaque des roches et la pédogenèse.</p>
+                    <p><strong>Termitières :</strong> 0,5 à 3 millions d'insectes par nid, jusqu'à 400 nids/ha à Madagascar.</p>
+                    <p>Bioturbation et création de micro-reliefs.</p>
+                    <span class="page-number">Page 9</span>
+                </div>
+                
+                <!-- Section 6 -->
+                <div class="section-card">
+                    <h3><i class="fas fa-chart-line"></i> Facteurs de l'altération</h3>
+                    <p>Facteurs influençant l'altération des roches :</p>
+                    <ul>
+                        <li>Température et couleur des roches</li>
+                        <li>Composition chimique</li>
+                        <li>Eaux météoriques et perméabilité</li>
+                        <li>Topographie</li>
+                    </ul>
+                    <span class="page-number">Page 10</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Full document -->
+        <section id="document" class="full-document">
+            <h2><i class="fas fa-book-open"></i> Document complet</h2>
+            <div class="document-content">
+                <!-- Page 1 -->
+                <div class="page-content">
+                    <h3>Page 1 - Introduction</h3>
+                    <div class="highlight">
+                        <p><strong>Pédogenèse et Morphogenèse</strong></p>
+                        <p>Facteurs et processus de formation des sols et du relief</p>
+                        <p><span class="keyword">Géomorphologie</span> et <span class="keyword">Pédologie</span></p>
+                    </div>
+                </div>
+                
+                <!-- Page 2 -->
+                <div class="page-content">
+                    <h3>Page 2 - Table des matières</h3>
+                    <p>Le document aborde les thèmes suivants :</p>
+                    <ol>
+                        <li>La pédogenèse</li>
+                        <li>Le sol</li>
+                        <li>La géomorphologie (principes fondamentaux)</li>
+                    </ol>
+                    <p>Le document est structuré en 12 pages couvrant l'ensemble des processus de formation des sols et du relief en milieu tropical.</p>
+                </div>
+                
+                <!-- Page 3 -->
+                <div class="page-content">
+                    <h3>Page 3 - Définition des pays tropicaux</h3>
+                    <p>De façon simplifiée, les pays tropicaux correspondent aux pays situés dans la zone intertropicale, c'est-à-dire, entre les deux tropiques. Les tropiques constituent les deux points extrêmes des zones tropicales où le soleil est au zénith une fois par an (solstice d'été, solstice d'hiver).</p>
+                    
+                    <div class="highlight">
+                        <p><strong>Critère thermique de tropicalité</strong></p>
+                        <p>La notion de tropicalité est définie en premier lieu par un critère thermique. D'une manière générale, ce sont les régions dont la température moyenne mensuelle demeure > 15°C et qui, en dehors de toute influence d'altitude, ne connaissent pas les gelées saisonnières.</p>
+                    </div>
+                    
+                    <p><strong>Caractéristiques clés :</strong></p>
+                    <ul>
+                        <li>Zone intertropicale entre les deux tropiques</li>
+                        <li>Température moyenne mensuelle > 15°C</li>
+                        <li>Absence de gelées saisonnières</li>
+                        <li>Saisons définies par les précipitations</li>
+                    </ul>
+                </div>
+                
+                <!-- Page 4 -->
+                <div class="page-content">
+                    <h3>Page 4 - Conditions climatiques des milieux tropicaux</h3>
+                    <p><strong>Particularités climatiques du milieu tropical :</strong></p>
+                    <p>Les milieux tropicaux sont définis essentiellement par un critère thermique, c'est-à-dire la régularité des températures avec prédominance de l'amplitude thermique diurne sur l'amplitude annuelle.</p>
+                    
+                    <p><strong>Importance géomorphologique :</strong></p>
+                    <p>L'érosion pluviale est très importante car il n'y a aucun obstacle comme la couverture végétale. Le régime thermique intertropical présente donc une originalité très marquée qui affecte la presque totalité de la zone.</p>
+                    
+                    <p><strong>L'humidité et le régime hydrique :</strong></p>
+                    <p>Présente des traits communs dans toute la zone chaude mais il y a aussi des grandes différences régionales. C'est le principal facteur de différenciation régionale.</p>
+                    
+                    <ul>
+                        <li>Point commun : La part importante des pluies de convection (cumulonimbus)</li>
+                        <li>Point commun : Marquage des pluies orageuses à forte intensité</li>
+                        <li>Zone de convergence au niveau de l'équateur (ZCIT)</li>
+                    </ul>
+                </div>
+                
+                <!-- Pages 5-6 -->
+                <div class="page-content">
+                    <h3>Pages 5-6 - Désagrégation mécanique et altération chimique</h3>
+                    
+                    <p><strong>La désagrégation mécanique :</strong></p>
+                    <p>La formation d'un sol résulte de la fragmentation des roches en particules de plus en plus fines et l'incorporation de celles-ci à de la matière organique au sein de la décomposition.</p>
+                    
+                    <p><strong>La thermoclastie :</strong></p>
+                    <p>Du grec thermos = chaud, blastos = brisé. C'est la fragmentation de la roche provoquée par les changements de température à la suite d'une alternance de dilatation et de contraction qui génèrent des tensions dans les roches.</p>
+                    
+                    <p><strong>La cryoclastie (gélifraction) :</strong></p>
+                    <p>Du grec kruos = froid. Fragmentation due à l'alternance du gel et du dégel de l'eau remplissant les vides des roches. Transformer en glace, l'eau s'accompagne d'une augmentation de volume de 10%.</p>
+                    
+                    <p><strong>L'altération chimique :</strong></p>
+                    <p>Les actions chimiques de la météorisation incluent la dissolution, l'oxydation et l'hydratation. Les eaux qui circulent dans les roches dissolvent les minéraux à leur contact.</p>
+                </div>
+                
+                <!-- Page 12 -->
+                <div class="page-content">
+                    <h3>Page 12 - Conclusion</h3>
+                    <div class="highlight">
+                        <ul>
+                            <li>La pédogenèse prolonge l'altération</li>
+                            <li>L'eau intervient fortement dans le processus d'altération</li>
+                            <li>Le maximum d'altération est localisé en milieu équatorial humide</li>
+                            <li>L'eau et la température élevée accélèrent les réactions chimiques</li>
+                            <li>Toutes les roches ne s'altèrent pas de la même façon ni à la même vitesse</li>
+                            <li>L'altération dépend de la composition chimique des roches</li>
+                        </ul>
+                    </div>
+                    <p><strong>Pédogenèse et Morphogenèse</strong> - Fin du document</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Download section -->
+        <section id="download" class="download-section">
+            <h3><i class="fas fa-download"></i> Télécharger le document complet</h3>
+            <p>Obtenez le document PDF original avec toutes les illustrations et schémas</p>
+            <a href="morphogénèse_et_pédogenèse.pdf" class="download-btn" download>
+                <i class="fas fa-file-pdf"></i> Télécharger le PDF (12 pages)
+            </a>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="logo">
+                <i class="fas fa-mountain"></i>
+                <div>
+                    <h2>Pédogenèse & Morphogenèse</h2>
+                    <p>Étude des sols et du relief</p>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <a href="#sections"><i class="fas fa-list"></i> Sections</a>
+                <a href="#document"><i class="fas fa-file-alt"></i> Document</a>
+                <a href="#download"><i class="fas fa-download"></i> Télécharger</a>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2026 Hiarii Larisah - Document pédagogique sur la pédogenèse et la morphogenèse</p>
+                <p>Géomorphologie et Pédologie - Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a, .footer-links a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId.startsWith('#')) {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Add active class to current section in navigation
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            let currentSection = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Highlight keywords in the document
+        document.addEventListener('DOMContentLoaded', function() {
+            const keywords = ['géomorphologie', 'pédogenèse', 'morphogenèse', 'altération', 'tropical', 'thermoclastie', 'cryoclastie'];
+            const contentElements = document.querySelectorAll('.page-content p, .page-content li');
+            
+            contentElements.forEach(element => {
+                let html = element.innerHTML;
+                keywords.forEach(keyword => {
+                    const regex = new RegExp(`\\b${keyword}\\b`, 'gi');
+                    html = html.replace(regex, `<span class="keyword">${keyword}</span>`);
+                });
+                element.innerHTML = html;
+            });
+        });
+    </script>
+</body>
+</html>
